@@ -69,3 +69,47 @@ const pages = [
 "White Neutral Basic Article Page Layout Document_20260915_202019_0000.png",
 
 ];
+
+let currentPage = 0;
+
+const img = document.getElementById("pageImage");
+const prev = document.getElementById("prevBtn");
+const next = document.getElementById("nextBtn");
+
+function showPage(){
+
+img.src = pages[currentPage];
+
+prev.disabled = currentPage === 0;
+next.disabled = currentPage === pages.length - 1;
+
+}
+
+prev.onclick = function(){
+
+if(currentPage > 0){
+
+currentPage--;
+showPage();
+
+}
+
+}
+
+next.onclick = function(){
+
+if(currentPage < pages.length - 1){
+
+currentPage++;
+showPage();
+
+}
+
+}
+
+showPage();
+
+</script>
+
+</body>
+</html>
