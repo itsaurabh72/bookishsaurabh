@@ -2,11 +2,184 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Women Book</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Cage Called Society</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    text-align:center;
+    font-family:Arial,sans-serif;
+}
+
+#pageImage{
+    width:100%;
+    max-width:900px;
+    display:block;
+    margin:auto;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    max-width:900px;
+    margin:20px auto;
+    padding:0 15px 25px;
+}
+
+button{
+    background:#111;
+    color:#fff;
+    border:none;
+    padding:14px 28px;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#333;
+}
+
+button:disabled{
+    background:#666;
+    cursor:not-allowed;
+    opacity:.7;
+}
+</style>
+
 </head>
+
 <body>
 
-Coming Soon
+<img id="pageImage" src="" alt="Book Page">
+
+<div class="buttons">
+<button id="prevBtn">← Previous</button>
+<button id="nextBtn">Next →</button>
+</div>
+
+<script>
+
+const pages = [Black and White Simple Fashion Book Cover_20260917_172040_0000.png]
+
+"White Neutral Basic Article Page Layout Document_20260915_202019_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260915_213111_0000.png",
+
+"Picsart_26-09-17_13-18-00-033.jpg",
+
+"White Neutral Basic Article Page Layout Document_20260916_140352_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_140820_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_142706_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_143250_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_143444_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_144043_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_144610_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_145113_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_152815_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_153012_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_221454_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_223022_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_224518_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260916_224845_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_001333_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_072021_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_072220_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_073257_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_073540_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_074415_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_074913_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_080602_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_080921_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_081310_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_085456_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_090256_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_092255_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_092413_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_092634_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_093421_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_094129_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_094928_0000.png",
+
+"White Neutral Basic Article Page Layout Document_20260917_100259_0000.png",
+
+];
+
+let currentPage = 0;
+
+const img = document.getElementById("pageImage");
+const prev = document.getElementById("prevBtn");
+const next = document.getElementById("nextBtn");
+
+function showPage(){
+
+img.src = pages[currentPage];
+
+prev.disabled = currentPage === 0;
+next.disabled = currentPage === pages.length - 1;
+
+}
+
+prev.onclick = function(){
+
+if(currentPage > 0){
+
+currentPage--;
+showPage();
+
+}
+
+}
+
+next.onclick = function(){
+
+if(currentPage < pages.length - 1){
+
+currentPage++;
+showPage();
+
+}
+
+}
+
+showPage();
+
+</script>
 
 </body>
 </html>
